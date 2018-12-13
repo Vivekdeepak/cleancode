@@ -7,7 +7,8 @@ public class EmployeeVariable {
     // For Example :-
     public Integer daysBetweenDates;
 
-    // 2. do not eat words
+    // 2. do not eat words in function names
+    // try to write full words
     // WRONG
     public Integer daysBetDates;
 

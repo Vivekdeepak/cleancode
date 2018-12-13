@@ -2,16 +2,16 @@
 // SEQUENCE THAT IT
 public class EmployeeFunction {
 
-    // FUNCTION SHOULD BE SMALL, VERY SMALL , VERY SMALL
-    // 1. Function should be used for only single task
+    // FUNCTION SHOULD BE SMALL, VERY SMALL, VERY VERY SMALL
+    // 1. Functions should be used for only single task
     // 2. Function names should have verb
-    // 3. step down rule :- write functions which are used first and so on in a class
+    // 3. step down rule :- write functions which are used first, and so on in a class
     public void createEmployeeRecord(){  }
 
     // one major rule of functions is to be small
-    // try to make function as small as possible
+    // so try to make functions as small as possible
     // if they are big means there is something wrong
-    // worst scenario if they don't fit inside the reading screen
+    // Worst scenario if they don't fit inside the reading screen
     // try to break functions into smaller functions
     // For example:-
     //FROM
@@ -31,17 +31,21 @@ public class EmployeeFunction {
     // above example can be broken into
     // don't be shy in braking functions into
     // smaller function
-
+    // Below is the correct way :-
+    
     // CAUTION: Salesforce way of using switch statement is
     // different this is java example
     public Double calculateSalary(Employee e){
-        switch (e.Type){
-            case 'COMMISSIONED':
+        switch on e.Type {
+            when 'COMMISSIONED' {
                 return calculateCommissionPay(e);
-            case 'HOURLY':
+            }
+            when 'HOURLY' {
                 return calculateHourlyPay(e);
-            case 'SALARIED':
+            }
+            when 'SALARIED' {
                 return calculateSalariedPay(e);
+            }    
         }
     }
 
@@ -62,14 +66,19 @@ public class EmployeeFunction {
     }
 
     // PARAMETERS
-    // functions should have max 3 parameters
+    // functions should have max 3 parameters,
+    // no param functions :- niladic
+    // single param functions :- monadic
+    // two param functions :- dyadic
+    // three param functions :- triadic
+    // more than 3 param functions :- polyadic - it needs justification
     // if you are passing more than 3 that means function
-    // if doing more that one thing which breaks the first rule
+    // is doing more than one thing which breaks the first rule
 
     // Don't pass Boolean parameter in your function
     // that already means you will check for condition and
     // do different things
-    // WRONG
+    // WRONG 
     public void setTermsAndCondition(String name,String id,Boolean isCustomer){
         // This means you are doing 2 things here
         if(isCustomer){
@@ -90,11 +99,15 @@ public class EmployeeFunction {
     // CONSTRUCTORS
     // use static functions insted of overloading constructors to
     // provide more meaning to the statement
+    
     // FROM
+    // in this example we don't know what is happening when the 
+    // two parms are passed to constructor
     EmployeeFunction employeeFunction = new EmployeeFunction(1235.77,'Tony');
     // To
     // this gives better meaning
     EmployeeFunction employeeFunction = EmployeeFunction.setEmployeeSalaryAndName(1235.77,'Tony');
+    
     // static method
     public static EmployeeFunction setEmployeeSalaryAndName(Double salary,String name){
         EmployeeFunction employeeFunction = new EmployeeFunction();
