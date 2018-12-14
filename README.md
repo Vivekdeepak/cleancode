@@ -7,4 +7,4 @@ This repository contains all the best practices one should follow when writing c
 ## Usage 
 
 Every class has guidelines for writing that particular concept.
-For Example `EmployeeClass` has guidelines on how Class and `EmployeeFunction` has guidelines on how to write Functions/Methods
+For Example `EmployeeClass` has guidelines on how Class and `EmployeeFunction` has guidelines on how to write Functions/Methods. And so on...
